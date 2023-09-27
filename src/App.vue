@@ -1,7 +1,10 @@
 <script setup>
+
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
-import LineOACheck from './components/LineOACheck.vue';
+import LineOACheck from './components/LineOACheck.vue'
+
+
 </script>
 
 <template>

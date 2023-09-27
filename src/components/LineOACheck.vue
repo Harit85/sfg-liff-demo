@@ -1,5 +1,8 @@
 <script>
 import { liff } from "@line/liff";
+import { ref, computed, resolveDirective } from 'vue'
+import TheWelcome from "./TheWelcome.vue";
+
 
 export default {
   name: "LineOACheck",
@@ -20,46 +23,36 @@ export default {
         liffId: import.meta.env.VITE_LIFF_ID,
       })
       .then(() => {
+        console.log('LIFF init succeeded.')
         this.message = "LIFF init succeeded.";
       })
       .catch((e) => {
+        console.log('LIFF init failed.')
         this.message = "LIFF init failed.";
         this.error = `${e}`;
       });
+
+      this.getProfile()
   },
   methods:{
-    openWindow () {
-      liff.openWindow({
-        url: 'https://developers.line.me/en/docs/liff/overview/'
-      })
-    },
-  closeWindow () {
+    closeWindow () {
       liff.closeWindow()
     },
-    sendMessage () {
-      this.$liff.sendMessages([
-        {
-          type: 'text',
-          text: 'You/\'ve successfully sent a message! Hooray!'
-        },
-        {
-          type: 'sticker',
-          packageId: '2',
-          stickerId: '144'
-        }
-      ]).then(function () {
-        window.alert('Message sent')
-      }).catch(function (error) {
-        window.alert('Error sending message: ' + error)
-      })
-    },
+    
     getProfile () {
       let _this = this
       liff.getProfile().then(function (profile) {
         _this.profile = profile
       }).catch(function (error) {
-        alert('Error getting profile: ' + error)
+        //alert('Error getting profile: ' + error)
+      }).then(()=>{
+        setTimeout(function(){
+            location = this.TheWelcome
+        },10000)
       })
+      console.log('Line Name :',this.profile.displayName);
+      console.log('Line ID :',this.profile.userId);
+      
     }
   }
 };
@@ -69,84 +62,31 @@ export default {
 
 <template>
   <div>
-    <h1>create-liff-app</h1>
-    <p v-if="message">{{ message }}</p>
-    <p v-if="error">
-      <code>{{ error }}</code>
-    </p>
-    <h1 class="title">VueJs Line LIFF Showcase</h1>
-    <div class="columns is-mobile">
-      <div class="column is-12 has-text-centered buttons">
-        <button @click="openWindow()" class="button is-primary">
-          Open Window
-        </button>
-        <button @click="closeWindow()" class="button is-info">
-          Close Window
-        </button>
-        <button @click="sendMessage()" class="button is-success">
-          Send Message
-        </button>
-        <button @click="getProfile()" class="button is-danger">
-          Get Profile
-        </button>
-      </div>
+    <img src="https://www.popticles.com/wp-content/uploads/2022/03/Toms-Logo.png"/>
+    <h2>TOMS THAILAND MEMBER</h2>
+    <div id="loading">
+        <img
+        class="img"
+        src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif"
+        alt="loading..."
+        width="100"
+        style="margin-left: 120px;margin-top: 50px;"
+        />
     </div>
-    <h2 class="subtitle">Profile</h2>
-    <div class="columns is-mobile">
-      <div class="column is-half is-offset-one-quarter">
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">User ID:</label>
-          </div>
-          <div class="field-body">
-            <div class="field is-narrow">
-              <div class="control">
-                {{ profile.userId || "-" }}
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">Display Name:</label>
-          </div>
-          <div class="field-body">
-            <div class="field is-narrow">
-              <div class="control">
-                {{ profile.displayName || "-" }}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">Picture URL:</label>
-          </div>
-          <div class="field-body">
-            <div class="field is-narrow">
-              <div class="control">
-                {{ profile.pictureUrl || "-" }}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">Status Message:</label>
-          </div>
-          <div class="field-body">
-            <div class="field is-narrow">
-              <div class="control">
-                {{ profile.statusMessage || "-" }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br />
   </div>
 </template>
+
+<style scoped>
+h2 {
+  font-weight: 100;
+  font-size: 1.6rem;
+  top: -10px;
+  text-align: center;
+}  
+img {
+    margin-top: 100px;
+    max-width :-webkit-fill-available;
+}
+
+</style>
