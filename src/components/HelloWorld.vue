@@ -94,7 +94,7 @@ export default {
         <option value="Online">Online</option>
         <option value="Central world">Central world</option>
         <option value="Central Bangna">Central Bangna</option>
-        <option value="Central Ladproa">Central Ladproa</option>
+        <option value="Central Ladproa">Central Lardprao</option>
       </select>
       <div v-if="branchError" class="error">{{ branchError }}</div>
 
@@ -158,26 +158,7 @@ input[type=date] {
   box-sizing: border-box;
   font-weight: 60;
 }
-input::-webkit-date-and-time-value {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-weight: 60;
-}
-select{
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-weight: 60;
-}
+
 
 input[type=submit] {
   width: 100%;

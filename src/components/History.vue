@@ -32,9 +32,9 @@ export default {
     <miniProfile></miniProfile>
     <div id="tabMenu" style="margin-top: 20px;">
         <div class="w3-bar w3-black">
-            <button class="w3-bar-item w3-button" @click="openTab('purches')">ประวัติการซื้อ</button>
-            <button class="w3-bar-item w3-button" @click="openTab('mycoupon')">คูปองของฉัน</button>
-            <button class="w3-bar-item w3-button" @click="openTab('couponhis')">ประวัติการใช้คูปอง</button>
+            <button class="w3-bar-item w3-button" @click="openTab('purches')">Purchase history</button>
+            <button class="w3-bar-item w3-button" @click="openTab('mycoupon')">My rewards</button>
+            <button class="w3-bar-item w3-button" @click="openTab('couponhis')">Redemption history</button>
         </div>
         <div id="purches" class="w3-container tab" style="background-color: darkgray;">
             <div class="card-grid" style="margin-top: 10px;margin-bottom: 10px;">
@@ -57,7 +57,7 @@ export default {
             <div class="card-grid" style="margin-top: 10px;margin-bottom: 10px;">
                 <div class="card">
                     <img src="https://www.toms.com/dw/image/v2/BDWV_PRD/on/demandware.static/-/Library-Sites-toms-content-global/default/dwe57cf32a/page-designer/home/usca/promo_banners/0926_US_HP_BMSM_v7_m_563x334.jpg" 
-                     style="width: 100px;height: 60px;"/>
+                     style="width: 70px;height: 50px;"/>
                     <h2>30% Gift for you!</h2>
                     <p>*Enjoy when you spend 1500฿ or more, to get discount 30%</p>
                 </div>
@@ -69,7 +69,7 @@ export default {
         </div>
     </div>
     <div class="footer">
-        <button class="btn btn-primary mt-3 buttonFooter" id="back" @click="$router.push('home')" ><span>กลับสู่หน้าหลัก</span></button>
+        <button class="btn btn-primary mt-3 buttonFooter" id="back" @click="$router.push('home')" ><span>Return To Home</span></button>
     </div>
   </div>
 </template>

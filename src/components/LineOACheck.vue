@@ -16,7 +16,7 @@ export default {
         setTimeout(() => {
             this.lodingVisible = false 
             this.notRegisterVisible = true
-        }, 6000)
+        }, 2000)
     }
 }
 </script>
@@ -24,7 +24,7 @@ export default {
 <template>
   <div>
     <img src="https://www.popticles.com/wp-content/uploads/2022/03/Toms-Logo.png" style="width: 200px;margin-top: 100px;margin-bottom: 20px;" class="centerImg"/>
-    <h2>TOMS THAILAND MEMBER</h2>
+    <h2>TOMS THAILAND MEMBERSHIP</h2>
     <div id="loading" v-show="lodingVisible" class="hideElement">
         <img
         class="centerImg"
@@ -35,7 +35,8 @@ export default {
         />
     </div>
     <div id="notiMessage" v-show="notRegisterVisible" class="hideElement">
-        <h4>LINE Id not registered</h4>
+        <h4>You're not a member yet.</h4>
+        <h4>Please click to register.</h4>
         <button style="vertical-align:middle" @click="$router.push('consent')"><span>Register</span></button>
     </div>
     

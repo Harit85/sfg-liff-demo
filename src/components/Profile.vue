@@ -54,7 +54,7 @@ export default{
         <span>  <img src="https://www.popticles.com/wp-content/uploads/2022/03/Toms-Logo.png" style="width: 100px;margin-top: 10px;margin-bottom: 10px;" class="centerImg"/></span>
     </div>
     <div class="footer">
-        <button class="btn btn-primary mt-3" id="back" @click="$router.push('home')" ><span>กลับสู่หน้าหลัก</span></button>
+        <button class="btn btn-primary mt-3" id="back" @click="$router.push('home')" ><span>Return To Home</span></button>
     </div>
   </div>
 </template>
