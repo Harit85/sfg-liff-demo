@@ -46,7 +46,7 @@ export default{
     <div class="card">
         <img v-bind:src="profile.pictureUrl" style="width: 50%;margin-top: 10px;" />
         <h1>{{ profile.displayName }}</h1>
-        <p class="title">Points : 11,000</p>
+        <p class="title">Points : ⭐ 11,000</p>
         <p>Name : Toms Shoes</p>
         <p>Email : toms@shoes.com</p>
         <p>Phone : 0889997766</p>

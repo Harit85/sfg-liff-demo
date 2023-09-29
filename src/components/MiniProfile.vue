@@ -46,7 +46,7 @@ name: "MiniProfile",
                     </div>
                     <div class="profile-description">
                         <p class="user-title">{{ profile.displayName }}</p>
-                        <p class="username">Point:11,000</p>
+                        <p class="username">Point:⭐ 11,000</p>
                     </div>
                 </div>
                 <div class="menu-bar">
@@ -56,6 +56,9 @@ name: "MiniProfile",
         </div>
 </template>
 <style scoped>
+p{
+  margin-bottom:0rem
+}
 .username-container{
     background-color: #ffffff;
     width: 180px;

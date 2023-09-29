@@ -87,7 +87,7 @@ export default {
       <label for="bdate">วันเกิด :</label>
       <input type="date" id="bdate" name="birthdate" v-model="bdate" >
       <div v-if="bdateError" class="error">{{ bdateError }}</div>
-
+      <br/>
       <label for="branch">สาขา ณ จุดสมัคร</label>
       <select id="branch" name="branch" v-model="branch">
         <option value="" selected disabled hidden>--กรุณาเลือก--</option>
