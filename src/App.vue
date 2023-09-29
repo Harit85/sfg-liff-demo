@@ -16,6 +16,7 @@ export default {
     },
   }),
   mounted () {
+    document.title = "TOMS THAILAND MEMBERSHIP";
     liff.init({
       liffId: import.meta.env.VITE_LIFF_ID,
     })
