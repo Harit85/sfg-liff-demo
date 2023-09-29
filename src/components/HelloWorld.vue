@@ -89,7 +89,7 @@ export default {
       <div v-if="bdateError" class="error">{{ bdateError }}</div>
       <br/>
       <label for="branch">สาขา ณ จุดสมัคร</label>
-      <select id="branch" name="branch" v-model="branch">
+      <select id="branch" name="branch" v-model="branch" class="form-control">
         <option value="" selected disabled hidden>--กรุณาเลือก--</option>
         <option value="Online">Online</option>
         <option value="Central world">Central world</option>
@@ -110,6 +110,7 @@ export default {
 </template>
 
 <style scoped>
+@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css);
 h1 {
   font-weight: 500;
   font-size: 2.6rem;

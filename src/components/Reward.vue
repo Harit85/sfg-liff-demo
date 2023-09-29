@@ -124,4 +124,6 @@ export default {
     </div>
 </template>
 
-<style scoped>@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css);</style>
+<style scoped>
+@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css);
+</style>
