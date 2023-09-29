@@ -85,7 +85,10 @@ export default {
       <div v-if="lastNameError" class="error">{{ lastNameError }}</div>
 
       <label for="bdate">วันเกิด :</label>
-      <input type="date" id="bdate" name="birthdate" v-model="bdate" >
+      <div class="datepicker date input-group">
+            <input type="date" placeholder="Choose Date" class="form-control" id="bdate" name="birthdate" v-model="bdate">
+      </div>
+      <!-- <input type="date" id="bdate" name="birthdate" v-model="bdate" > -->
       <div v-if="bdateError" class="error">{{ bdateError }}</div>
       <br/>
       <label for="branch">สาขา ณ จุดสมัคร</label>
