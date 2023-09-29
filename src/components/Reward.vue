@@ -78,7 +78,7 @@ export default {
             <div class="row">
                 <div class="col-8">
                 </div>
-                <div class="col-1">
+                <div class="col-3">
                     <button type="button" class="rounded-pill btn btn-secondary">More..</button>
                 </div>
             </div>
@@ -121,9 +121,44 @@ export default {
             </div>
             <br>
         </div>
+        <div class="footer">
+            <button class="btn btn-primary mt-3" id="back" @click="$router.push('home')" ><span>Return To Home</span></button>
+        </div>
     </div>
 </template>
 
 <style scoped>
 @import url(https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css);
+
+.footer {
+  position:fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  background-color:#ffffff;
+}
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
 </style>

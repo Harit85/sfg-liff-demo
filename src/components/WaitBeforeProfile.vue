@@ -32,7 +32,6 @@ export default {
     </div>
     <div id="notiMessage" v-show="notRegisterVisible" class="hideElement">
         <h4>Thank you for joining us!</h4>
-        <h4>Go to your profile</h4>
         <button style="vertical-align:middle" @click="$router.push('profile')"><span>Go to Profile</span></button>
     </div>
     
