@@ -147,7 +147,27 @@ input[type=text], select {
   box-sizing: border-box;
   font-weight: 60;
 }
-input[type=date], select {
+input[type=date] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-weight: 60;
+}
+input::-webkit-date-and-time-value {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-weight: 60;
+}
+select{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
