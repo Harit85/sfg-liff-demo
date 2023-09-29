@@ -60,6 +60,7 @@ export default {
 
 <template>
   <main>
+    <title>TOMS Thailand Member</title>
     <!-- <div id="app">
       <router-view/>
     </div> -->
