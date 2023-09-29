@@ -43,7 +43,7 @@ export default{
     <div>
         <menubar></menubar>
         <div class="card">
-            <img v-bind:src="profile.pictureUrl" style="width: 50%;margin-top: 10px;" />
+            <img v-bind:src="profile.pictureUrl" style="width: 50%;margin-top: 10px;margin-left: auto;margin-right: auto;" />
             <h1>{{ profile.displayName }}</h1>
             <p class="title">Points : 11,000</p>
             <br/>

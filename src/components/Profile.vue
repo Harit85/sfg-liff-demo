@@ -44,16 +44,12 @@ export default{
   <div>
     <menubar></menubar>
     <div class="card">
-        <img v-bind:src="profile.pictureUrl" style="width: 50%;margin-top: 10px;" />
+        <img v-bind:src="profile.pictureUrl" style="width: 50%;margin-top: 10px;margin-left: auto;margin-right: auto;" />
         <h1>{{ profile.displayName }}</h1>
         <p class="title">Points : ⭐ 11,000</p>
         <p>Name : Toms Shoes</p>
         <p>Email : toms@shoes.com</p>
         <p>Phone : 0889997766</p>
-        <a href="#"><i class="fa fa-dribbble"> </i></a>
-        <a href="#"><i class="fa fa-twitter"> </i></a>
-        <a href="#"><i class="fa fa-linkedin"> </i></a>
-        <a href="#"><i class="fa fa-facebook"> </i></a>
         <br/>
         <span>  <img src="https://www.popticles.com/wp-content/uploads/2022/03/Toms-Logo.png" style="width: 100px;margin-top: 10px;margin-bottom: 10px;" class="centerImg"/></span>
     </div>
