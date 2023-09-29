@@ -1,26 +1,75 @@
-<script setup>
+<script >
 
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-import LineOACheck from './components/LineOACheck.vue'
+import router from './router'
+import { liff } from "@line/liff"
 
+export default {
+  name:'MainCom',
+  data: () => ({
+    message: "",
+    error: "",
+    profile: {
+      userId: "",
+      displayName: "",
+      pictureUrl: "",
+      statusMessage: "",
+    },
+  }),
+  mounted () {
+    liff.init({
+      liffId: import.meta.env.VITE_LIFF_ID,
+    })
+    .then(() => {
+        console.log('LIFF init succeeded.')
+        this.message = "LIFF init succeeded.";
+    })
+    .catch((e) => {
+        console.log('LIFF init failed.')
+        this.message = "LIFF init failed.";
+        this.error = `${e}`;
+    });
+    this.getProfile()
+  },
+  methods:{
+    getProfile () {
+      let _this = this
+      liff.getProfile().then(function (profile) {
+        _this.profile = profile
+        console.log('Line Name :',_this.profile.displayName)
+        console.log('Line ID :',_this.profile.userId)
+
+         setTimeout(function(){
+          router.push({ path: 'consent' ,query: { profile: _this.profile }})
+        },10000)
+      }).catch(function (error) {
+        _this.message = 'Profile not found'
+        _this.profile = {
+          userId : 'test123',
+          displayName: 'test'
+        }
+        // setTimeout(function(){
+        //   router.push({ path: 'welcome' })
+        // },7000)
+      })
+    }
+  }
+
+}
 
 </script>
 
 <template>
   <main>
-    <LineOACheck />
+    <!-- <div id="app">
+      <router-view/>
+    </div> -->
+    <router-view/>
   </main>
 </template>
 
 <style scoped>
 header {
   line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
 }
 
 @media (min-width: 1024px) {
@@ -30,14 +79,11 @@ header {
     padding-right: calc(var(--section-gap) / 2);
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
   header .wrapper {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
   }
 }
+
 </style>

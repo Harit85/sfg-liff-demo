@@ -1,10 +1,6 @@
 <script >
 export default {
-    name:'ConsentPage',
-    props: ['profile'],
-    setup(props) {
-        console.log(props.profile)
-    },
+    name:'WaitProfile',
     data() {
         return {
             lodingVisible: true,
@@ -35,8 +31,9 @@ export default {
         />
     </div>
     <div id="notiMessage" v-show="notRegisterVisible" class="hideElement">
-        <h4>LINE Id not registered</h4>
-        <button style="vertical-align:middle" @click="$router.push('consent')"><span>Register</span></button>
+        <h4>ขอบคุณสำหรับการสมัครสมาชิก!</h4>
+        <h4>คุณพร้อมแล้วที่จะใช้งาน</h4>
+        <button style="vertical-align:middle" @click="$router.push('profile')"><span>ไปหน้า Profile</span></button>
     </div>
     
 
@@ -55,7 +52,7 @@ h4 {
   font-size: 1.4rem;
   top: -10px;
   text-align: center;
-  color:red;
+  color:#88d4ee;
 } 
 button{
     display: block;
@@ -69,7 +66,7 @@ button{
     text-align: center;
     font-size: 20px;
     padding: 10px;
-    width: 100px;
+    width: 200px;
     transition: all 0.5s;
     cursor: pointer;
 
